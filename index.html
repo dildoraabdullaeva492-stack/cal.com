@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cal.com By Aliyev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAutFAJPWmXj50xsr7eHu8WuqemVPBPA4nn-4T-TITxg&s=10"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <base target="_blank" />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader-logo">Loading...</div>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+
+    <div class="noise"></div>
+
+    <header class="nav">
+      <a class="logo" onclick="goTo('#top')">cal.com</a>
+      <nav class="nav-links">
+        <a onclick="goTo('#features')">Features</a>
+        <a onclick="goTo('#apps')">Apps</a>
+        <a onclick="goTo('#business')">Solutions</a>
+        <a onclick="goTo('#reviews')">Reviews</a>
+      </nav>
+      <div class="nav-actions">
+        <button
+          class="btn btn-ghost"
+          onclick="notify('Login page coming soon')"
+        >
+          Login
+        </button>
+        <button class="btn btn-dark" onclick="goTo('#cta')">Get Started</button>
+      </div>
+      <button
+        class="burger"
+        id="burger"
+        onclick="toggleMenu()"
+        aria-label="menu"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a onclick="goTo('#features'); toggleMenu()">Features</a>
+      <a onclick="goTo('#apps'); toggleMenu()">Apps</a>
+      <a onclick="goTo('#business'); toggleMenu()">Solutions</a>
+      <a onclick="goTo('#reviews'); toggleMenu()">Reviews</a>
+      <button class="btn btn-dark" onclick="goTo('#cta'); toggleMenu()">
+        Get Started
+      </button>
+    </div>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-badge">Meet Cal.com — free for individuals</div>
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Scheduling</span></span>
+          <span class="line"><span class="word">infrastructure</span></span>
+          <span class="line"
+            ><span class="word">for <em>everyone.</em></span></span
+          >
+        </h1>
+
+        <div class="claim-box">
+          <div class="claim-field">
+            <span class="claim-url">cal.com/</span
+            ><input type="text" placeholder="username" aria-label="username" />
+          </div>
+          <button class="btn btn-dark btn-big" onclick="claimUsername()">
+            Claim username
+          </button>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="hc-head">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80"
+                alt="avatar"
+                class="hc-avatar"
+              />
+              <div>
+                <strong>Rick Astley</strong><small>Get Rickrolled</small>
+              </div>
+              <span class="hc-live"></span>
+            </div>
+            <p class="hc-desc">
+              Book me and I will never give you up. Cal will never let you down.
+            </p>
+            <div class="hc-meta">
+              <span>◷ 30 min</span><span>◉ Zoom</span
+              ><span>◈ Europe / Dublin</span>
+            </div>
+            <div class="hc-cal">
+              <div class="hc-cal-head">
+                <span>‹</span><b>December 2022</b><span>›</span>
+              </div>
+              <div class="hc-grid">
+                <i>Su</i><i>Mo</i><i>Tu</i><i>We</i><i>Th</i><i>Fr</i><i>Sa</i>
+                <b></b><b></b><b></b><b></b><b></b><b>1</b><b>2</b><b>3</b>
+                <b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b>
+                <b>11</b><b>12</b><b>13</b><b>14</b><b>15</b><b>16</b><b>17</b>
+                <b>18</b><b class="sel">19</b><b>20</b><b>21</b><b>22</b
+                ><b>23</b><b>24</b> <b>25</b><b>26</b><b>27</b><b>28</b><b>29</b
+                ><b>30</b><b>31</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint"><span></span>scroll</div>
+      </section>
+
+      <section class="dark-section">
+        <h2 class="sr-l">
+          Schedule meetings<br />without the <u>email tennis</u>
+        </h2>
+        <ol class="steps">
+          <li class="step">
+            <span>01</span>
+            <h3>Connect your calendar(s)</h3>
+            <p>
+              Cal reads your availability from all your existing calendars
+              ensuring you never get double booked!
+            </p>
+          </li>
+          <li class="step">
+            <span>02</span>
+            <h3>Set your availability</h3>
+            <p>
+              Define when you're bookable once — Cal handles the rest across
+              every link you share.
+            </p>
+          </li>
+          <li class="step">
+            <span>03</span>
+            <h3>Share your link</h3>
+            <p>
+              One personal link for every scenario: 15-min chats, demos,
+              interviews, support.
+            </p>
+          </li>
+          <li class="step">
+            <span>04</span>
+            <h3>Let people book when it works for both of you</h3>
+            <p>
+              No back-and-forth. Ever. Meetings appear in both calendars
+              instantly.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="features" id="features">
+        <h2 class="section-title sr-u">
+          Everything you need in<br />a scheduling app
+        </h2>
+
+        <div class="feat-grid">
+          <article class="feat-card big">
+            <div class="feat-num">01</div>
+            <div class="feat-visual img-fx">
+              <img
+                src="kompyuter.png"
+                alt="event types dashboard"
+              />
+            </div>
+            <h3>A tailored link ready for every scenario</h3>
+            <p>
+              Set availability, location, duration and more on a per-link basis.
+              Send bookings to different calendars or set a default.
+            </p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-num">02</div>
+            <div class="feat-visual img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+                alt="calendars connected"
+              />
+            </div>
+            <h3>Connect all your calendars</h3>
+            <p>
+              Cal.com checks for conflicts across all of your calendars and only
+              offers times that are open.
+            </p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-num">03</div>
+            <div class="feat-visual img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+                alt="automation analytics"
+              />
+            </div>
+            <h3>Workflow automation</h3>
+            <p>
+              Notifications, reminders and follow ups are automatically taken
+              care of around your events.
+            </p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-num">04</div>
+            <div class="feat-visual img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+                alt="team scheduling"
+              />
+            </div>
+            <h3>Scheduling for your team</h3>
+            <p>
+              Round-Robin scheduling ensures even distribution of calls across
+              your team. Collective availability makes it easy.
+            </p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-num">05</div>
+            <div class="feat-visual img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80"
+                alt="routing forms"
+              />
+            </div>
+            <h3>Route bookers to the right person</h3>
+            <p>
+              Ask screening questions and automatically connect bookers to the
+              right person, event or link.
+            </p>
+          </article>
+
+          <article class="feat-card">
+            <div class="feat-num">06</div>
+            <div class="feat-visual img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
+                alt="buffers"
+              />
+            </div>
+            <h3>Avoid meeting overload</h3>
+            <p>
+              Limit people from overbooking you on a weekly or daily basis. Put
+              breathing room between meetings.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <div class="marquee-x">
+        <div class="marquee m-top">
+          <div class="marquee-track">
+            <span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            ><span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            ><span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            ><span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            >
+          </div>
+        </div>
+        <div class="marquee m-bottom">
+          <div class="marquee-track rev">
+            <span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            ><span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            ><span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            ><span
+              >Pay to meet ✦ Embed it anywhere ✦ Opt-in bookings ✦ Simple
+              rescheduling ✦ 26+ languages ✦ Hashed booking links ✦&nbsp;</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <section class="apps" id="apps">
+        <h2 class="apps-title">Connect your<br /><em>favorite apps</em></h2>
+        <p class="apps-sub">
+          Cal.com works with all apps already in your scheduling flow ensuring
+          everything works perfectly together.
+        </p>
+        <div class="apps-cloud">
+          <button
+            class="app-icon"
+            style="--d: 0"
+            onclick="appInfo('Google','Google Calendar bilan ikki tomonlama sinxron: band vaqt avtomatik tekshiriladi, double-booking bo'lmaydi.')"
+          >
+            Google
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 0.6"
+            onclick="appInfo('Outlook','Microsoft Outlook and Office 365 Calendar — work and personal meetings all in one place. Connect.')"
+          >
+            Outlook
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 1.2"
+            onclick="appInfo('Zoom','A Zoom video link is automatically generated for each booking.')"
+          >
+            Zoom
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 0.3"
+            onclick="appInfo('Slack','Booking xabarnomalarini to'g'ridan-to'g'ri Slack kanalingizga oling.')"
+          >
+            Slack
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 0.9"
+            onclick="appInfo('Stripe','Pullik konsultatsiyalar uchun to'lovlarni qabul qiling.')"
+          >
+            Stripe
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 1.5"
+            onclick="appInfo('Apple','Sync with Apple Calendar across all your devices.')"
+          >
+            Apple
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 0.2"
+            onclick="appInfo('Notion','Booking sahifalarni Notion'ga embed qiling, eventlarni bazaga yozing.')"
+          >
+            Notion
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 1"
+            onclick="appInfo('GitHub','Cal.com open-source — manage the self-hosted version via GitHub.')"
+          >
+            GitHub
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 0.7"
+            onclick="appInfo('Figma','Book design handoff meetings directly within your Figma workflow.')"
+          >
+            Figma
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 1.4"
+            onclick="appInfo('Teams','A Microsoft Teams video link for each meeting.')"
+          >
+            Teams
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 0.4"
+            onclick="appInfo('Linear','Yangi bookinglar avtomatik Linear issue'ga aylanadi.')"
+          >
+            Linear
+          </button>
+          <button
+            class="app-icon"
+            style="--d: 1.1"
+            onclick="appInfo('Trello','A Trello card is created for each booking.')"
+          >
+            Trello
+          </button>
+        </div>
+        <button class="btn btn-outline" onclick="exploreApps()">
+          Explore all apps ›
+        </button>
+      </section>
+
+      <section class="business" id="business">
+        <h2 class="section-title">
+          Scheduling that adapts<br />to any business
+        </h2>
+        <div class="biz-tabs">
+          <button class="biz-tab active" onclick="switchTab(this, 'tele')">
+            Doctors → Patients
+          </button>
+          <button class="biz-tab" onclick="switchTab(this, 'comp')">
+            Companies → Candidates
+          </button>
+          <button class="biz-tab" onclick="switchTab(this, 'teach')">
+            Teachers → Students
+          </button>
+          <button class="biz-tab" onclick="switchTab(this, 'experts')">
+            Experts → Fellows
+          </button>
+        </div>
+
+        <div class="biz-panel show" id="tele">
+          <div class="biz-cards">
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Julian Erics, MD</h4>
+              <p>Licensed therapist with 10 years of experience.</p>
+            </div>
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Lawrence Hunter, MD</h4>
+              <p>Cardiologist from California focussing on fitness.</p>
+            </div>
+          </div>
+          <div class="biz-text">
+            <h3>Telemedicine</h3>
+            <p>
+              Build Telemedicine to allow patients to book appointments with
+              doctors and therapists.
+            </p>
+            <button class="btn btn-dark" onclick="learnMore('Telemedicine')">
+              Learn more ›
+            </button>
+          </div>
+        </div>
+
+        <div class="biz-panel" id="comp">
+          <div class="biz-cards">
+            <div class="biz-card img-fx">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv5M-sR5ioRLtT-GmmPsBNazB-LR3QCm8mo2C7vXdexw&s=10"
+                alt=""
+              />
+              <h4>Recruiting pipeline</h4>
+              <p>Route candidates to the right interviewer automatically.</p>
+            </div>
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Panel interviews</h4>
+              <p>Collective booking when the whole panel is free.</p>
+            </div>
+          </div>
+          <div class="biz-text">
+            <h3>Hiring, automated</h3>
+            <p>
+              From screening questions to round-robin interviews — hire without
+              the chaos.
+            </p>
+            <button class="btn btn-dark" onclick="learnMore('Hiring')">
+              Learn more ›
+            </button>
+          </div>
+        </div>
+
+        <div class="biz-panel" id="teach">
+          <div class="biz-cards">
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Office hours</h4>
+              <p>Let students book 1:1 time during your open slots.</p>
+            </div>
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Group classes</h4>
+              <p>Collective availability for workshops and seminars.</p>
+            </div>
+          </div>
+          <div class="biz-text">
+            <h3>Education</h3>
+            <p>
+              Teachers, tutors and coaches use Cal.com to make booking lessons
+              effortless.
+            </p>
+            <button class="btn btn-dark" onclick="learnMore('Education')">
+              Learn more ›
+            </button>
+          </div>
+        </div>
+
+        <div class="biz-panel" id="experts">
+          <div class="biz-cards">
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Paid consultations</h4>
+              <p>Monetize your time with Stripe-powered paid bookings.</p>
+            </div>
+            <div class="biz-card img-fx">
+              <img
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=600&q=80"
+                alt=""
+              />
+              <h4>Mentorship</h4>
+              <p>Recurring sessions with automatic reminders.</p>
+            </div>
+          </div>
+          <div class="biz-text">
+            <h3>Experts</h3>
+            <p>
+              Consultants, mentors and coaches run their entire practice on
+              Cal.com.
+            </p>
+            <button class="btn btn-dark" onclick="learnMore('Experts')">
+              Learn more ›
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews">
+        <blockquote class="review-quote sr-l">
+          "cal.com is awesome<br />AND built on <em>open source</em>"
+        </blockquote>
+
+        <div class="review-grid">
+          <figure class="review">
+            <img src="gulirano.png" alt="" />
+            <figcaption>
+              <b>Guillermo Rauch</b>
+              <p>
+                Coolest domain. Check. Coolest mission. Check. Coolest product.
+                Check.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <img src="thomas.png" alt="" />
+            <figcaption>
+              <b>Thomas Paul Mann</b>
+              <p>
+                I'm already rocking the new @calcom extension to coordinate my
+                meetings.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <img src="Kp.png" alt="" />
+            <figcaption>
+              <b>KP</b>
+              <p>
+                SaaS is eating the world and Open Source is eating SaaS for
+                breakfast. Cal leads it.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <img src="achki.png" alt="" />
+            <figcaption>
+              <b>Sharath</b>
+              <p>
+                Probably the first calendar app in web3 space! Great work
+                @calcom team!
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <img src="oboda.png" alt="" />
+            <figcaption>
+              <b>Scott Galligan</b>
+              <p>
+                The more I use tools like @calcom the more I believe in the
+                power of an extensible platform.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80"
+              alt=""
+            />
+            <figcaption>
+              <b>Farhai Mayoon</b>
+              <p>
+                As of today I'm officially a @calcom maxi. The product is epic.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review hidden-rev">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
+              alt=""
+            />
+            <figcaption>
+              <b>Talha Altinel</b>
+              <p>
+                I am amazed by @calcom's success. Taking off as a project in
+                2020, now everywhere.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="review hidden-rev">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80"
+              alt=""
+            />
+            <figcaption>
+              <b>Andy Randall</b>
+              <p>
+                Booking links, routing forms, workflows — everything just works.
+                Premium feel.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="center">
+          <button
+            class="btn btn-dark btn-big"
+            id="showMoreBtn"
+            onclick="showMore()"
+          >
+            Show more +
+          </button>
+        </div>
+      </section>
+
+      <section class="cta" id="cta">
+        <h2 class="cta-title">
+          Let people book when it<br />works for <em>both of you</em>
+        </h2>
+        <div class="claim-box">
+          <div class="claim-field">
+            <span class="claim-url">cal.com/</span
+            ><input type="text" placeholder="yourname" aria-label="username" />
+          </div>
+          <button class="btn btn-dark btn-big" onclick="claimUsername()">
+            Claim username
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Cal.com</div>
+          <p>© 2026 Cal.com, By Aliyev Abdulaziz.<br />Aliyev@gmail.com</p>
+          <div class="badges">
+            <span>SOC2</span><span>CCPA</span><span>GDPR</span>
+          </div>
+        </div>
+        <div>
+          <h5>Solutions</h5>
+          <a onclick="goTo('#business')">Self-hosted</a
+          ><a onclick="goTo('#business')">SaaS Hosting</a
+          ><a onclick="goTo('#apps')">Platform</a
+          ><a onclick="goTo('#cta')">Desktop App</a>
+        </div>
+        <div>
+          <h5>Documentation</h5>
+          <a onclick="notify('Docs opening soon')">Product</a
+          ><a onclick="notify('API docs coming soon')">Developers</a
+          ><a onclick="notify('API docs coming soon')">Public API</a
+          ><a onclick="notify('Docker guide coming soon')">Docker</a>
+        </div>
+        <div>
+          <h5>Resources</h5>
+          <a onclick="notify('Blog opening soon')">Blog</a
+          ><a onclick="notify('Merch store soon')">Merch Store</a
+          ><a onclick="notify('Open Startup page soon')">Open Startup</a
+          ><a onclick="notify('Embed docs soon')">Embed</a>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <a onclick="notify('About page soon')">About</a
+          ><a onclick="notify('Privacy policy soon')">Privacy</a
+          ><a onclick="notify('Terms soon')">Terms</a
+          ><a onclick="notify('License info soon')">License</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="appModal" onclick="closeAppInfo()">
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <button class="modal-x" onclick="closeAppInfo()" aria-label="close">
+          &#10005;
+        </button>
+        <div class="modal-icon" id="modalIcon">G</div>
+        <h3 id="modalTitle">Google</h3>
+        <p id="modalDesc"></p>
+        <button
+          class="btn btn-dark btn-big"
+          onclick="notify('Connection wizard coming soon')"
+        >
+          Connect &#8250;
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function goTo(sel) {
+        document.querySelector(sel).scrollIntoView({ behavior: "smooth" });
+      }
+      function claimUsername() {
+        var inputs = document.querySelectorAll(".claim-field input");
+        var name = "";
+        inputs.forEach(function (i) {
+          if (i.value.trim()) name = i.value.trim();
+        });
+        notify(
+          name
+            ? 'Username "' + name + '" is being reserved for you!'
+            : "Type a username first to claim it."
+        );
+      }
+      function notify(msg) {
+        var n = document.createElement("div");
+        n.className = "toast";
+        n.textContent = msg;
+        document.body.appendChild(n);
+        setTimeout(function () {
+          n.classList.add("show");
+        }, 10);
+        setTimeout(function () {
+          n.classList.remove("show");
+          setTimeout(function () {
+            n.remove();
+          }, 400);
+        }, 2600);
+      }
+      function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("open");
+      }
+      function exploreApps() {
+        notify("App directory: 100+ integrations available.");
+      }
+      function appInfo(name, desc) {
+        document.getElementById("modalTitle").textContent = name;
+        document.getElementById("modalDesc").textContent = desc;
+        document.getElementById("modalIcon").textContent = name.charAt(0);
+        document.getElementById("appModal").classList.add("open");
+      }
+      function closeAppInfo() {
+        document.getElementById("appModal").classList.remove("open");
+      }
+      function learnMore(topic) {
+        notify(topic + " solution details coming soon.");
+      }
+      function switchTab(btn, id) {
+        document.querySelectorAll(".biz-tab").forEach(function (t) {
+          t.classList.remove("active");
+        });
+        btn.classList.add("active");
+        document.querySelectorAll(".biz-panel").forEach(function (p) {
+          p.classList.remove("show");
+        });
+        document.getElementById(id).classList.add("show");
+      }
+      function showMore() {
+        document.querySelectorAll(".hidden-rev").forEach(function (r) {
+          r.classList.add("revealed");
+        });
+        document.getElementById("showMoreBtn").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
